@@ -2,15 +2,73 @@
   "resorts": [
     {
       "id": 1,
-      "name": "Woody",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8
+      "name": "Breckenridge Ski Resort",
+      "website": "https://www.breckenridge.com/",
+      "image": "https://www.breckenridge.com/-/aemasset/image/upload/Breckenridge/Products/lodging/signature-properties/Village_ext_win.jpg",
+      "likes": 8,
+      "elevation": "",
+      "terrain overview": "",
+      "gondolas & trams": "",
+      "quad chairs": "",
+      "triple chairs": "",
+      "double chairs": "",
+      "surface lifts": ""
     },
     {
       "id": 2,
-      "name": "Buzz Lightyear",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
+      "name": "Keystone Resort",
+      "website": "https://www.keystoneresort.com/",
+      "image": "https://digital.snow.com/api/imgproxy/fetch?url=unsafe/resize:fit:0:0/dpr:1/plain/https://images.vrinntopia.com/photos//50016739/50016739-2-e7a44505.jpg",
+      "likes": 14,
+      "elevation": "",
+      "terrain overview": "",
+      "gondolas & trams": "",
+      "quad chairs": "",
+      "triple chairs": "",
+      "double chairs": "",
+      "surface lifts": ""
+    },
+    {
+      "id": 3,
+      "name": "Vail",
+      "website": "https://www.vail.com/",
+      "image": "https://www.uncovercolorado.com/wp-content/uploads/2019/03/vail-luxury-hotels-four-seasons-resort-winter-1600x800-1-1600x800.jpg",
+      "likes": 8,
+      "elevation": "",
+      "terrain overview": "",
+      "gondolas & trams": "",
+      "quad chairs": "",
+      "triple chairs": "",
+      "double chairs": "",
+      "surface lifts": ""
+    },
+    {
+      "id": 4,
+      "name": "Beaver Creek Resort",
+      "website": "https://www.beavercreek.com/",
+      "image": "https://images.vrinntopia.com/photos//50016563/50016563-2-da81133f.jpg",
+      "likes": 14,
+      "elevation": "",
+      "terrain overview": "",
+      "gondolas & trams": "",
+      "quad chairs": "",
+      "triple chairs": "",
+      "double chairs": "",
+      "surface lifts": ""
+    },
+    {
+      "id": 5,
+      "name": "Aspen Snowmass",
+      "website": "https://www.aspensnowmass.com/",
+      "image": "https://www.planetware.com/wpimages/2021/03/colorado-aspen-best-resorts-little-nell.jpg",
+      "likes": 8,
+      "elevation": "",
+      "terrain overview": "",
+      "gondolas & trams": "",
+      "quad chairs": "",
+      "triple chairs": "",
+      "double chairs": "",
+      "surface lifts": ""
     }
   ]
 }
