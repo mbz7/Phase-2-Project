@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <Container fluid>
+    <Container>
       <Navbar bg="dark" variant="dark">
         <Container fluid>
           <Navbar.Brand href="#home">SkiBum®</Navbar.Brand>
