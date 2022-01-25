@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import Header from "./Header";
-import ContainerList from "./ContainerList";
+import ResortList from "./ResortList";
 import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 
 function App() {
@@ -54,14 +54,12 @@ function App() {
         setter={setSearch}
       />
 
-      <ContainerList
+      <ResortList
         resorts={resorts}
         search={search}
         likesPlus={handleLikesIncrement}
         likesMinus={handleLikesDecrement}
       />
-      <Button>Test Button</Button>
-      {/* </div> */}
     </Container>
   );
 }

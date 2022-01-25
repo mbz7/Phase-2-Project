@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
+import Resort from "./Resort";
 
-function ContainerList({ resorts, search, likesPlus, likesMinus }) {
+function ResortList({ resorts, search, likesPlus, likesMinus }) {
   // filters through each object and includes resort NAME as the searchable keyword
   const filteredResorts = resorts.filter((resort) =>
     resort.name.toLowerCase().includes(search.toLowerCase())
@@ -9,7 +9,7 @@ function ContainerList({ resorts, search, likesPlus, likesMinus }) {
 
   // maps through filtered list of resort names
   const resortsObj = filteredResorts.map((resort) => (
-    <Container
+    <Resort
       key={resort.id}
       name={resort.name}
       website={resort.website}
@@ -21,4 +21,4 @@ function ContainerList({ resorts, search, likesPlus, likesMinus }) {
   return <div>{resortsObj}</div>;
 }
 
-export default ContainerList;
+export default ResortList;
