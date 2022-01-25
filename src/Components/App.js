@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import Header from "./Header";
 import ResortList from "./ResortList";
+import NavB from "./NavB"
 import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 
 function App() {
@@ -36,18 +37,11 @@ function App() {
   }
 
   return (
-    <Container>
-      <Navbar bg="dark" variant="dark">
-        <Container fluid>
-          <Navbar.Brand href="#home">SkiBum®</Navbar.Brand>
-          <Navbar className="me-auto">
-            <Nav.Link href="#resorts">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Navbar>
-        </Container>
-      </Navbar>
-      {/* <div className={isDarkMode ? "App Light" : "App Dark"}> */}
+    <Container fluid>
+  
+      <NavB />
       <LoginForm />
+      <div className={isDarkMode ? "App Light" : "App Dark"}></div>
       <Header
         isDarkMode={handleToggleLightMode}
         search={search}
