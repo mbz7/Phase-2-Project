@@ -5,7 +5,9 @@ import Header from "./Header";
 import ResortList from "./ResortList";
 import NavB from "./NavB";
 import LoginForm from "./LoginForm";
-import About from "./About"
+import About from "./About";
+import Home from "./Home";
+import Forum from "./Forum";
 import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 
 function App() {
@@ -33,18 +35,36 @@ function App() {
 
   return (
     <div>
-    <Container fluid>
-      <NavB />
+      <Container fluid>
+        <NavB title="SkiBum®" />
+        <Switch>
+          <Route path="/forum">
+            <Forum />
+          </Route>
 
-      <Header search={search} setter={setSearch} />
+          <Route path="/about">
+            <About />
+          </Route>
 
-      <ResortList
-        resorts={resorts}
-        search={search}
-        likesPlus={handleLikesIncrement}
-        likesMinus={handleLikesDecrement}
-      />
-    </Container>
+          <Route path="/login">
+            <LoginForm />
+          </Route>
+
+          <Route path="/home">
+            <Home />
+          </Route>
+
+          <Route path="/">
+            <Header search={search} setter={setSearch} />
+            <ResortList
+              resorts={resorts}
+              search={search}
+              likesPlus={handleLikesIncrement}
+              likesMinus={handleLikesDecrement}
+            />
+          </Route>
+        </Switch>
+      </Container>
     </div>
   );
 }
