@@ -23,16 +23,6 @@ function App() {
       .then((resorts) => setResorts(resorts));
   }, []);
 
-  // handles like increment
-  // function handleLikesIncrement() {
-  //   setLikes((likes) => likes + 1);
-  // }
-
-  // handles like decrement
-  // function handleLikesDecrement() {
-  //   setLikes((likes) => likes - 1);
-  // }
-
   return (
     <div>
       <Container fluid>
