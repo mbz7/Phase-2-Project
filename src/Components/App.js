@@ -4,11 +4,11 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import ResortList from "./ResortList";
 import NavB from "./NavB";
-import LoginForm from "./LoginForm";
-import About from "./About";
+import Login from "./LoginForm";
+import About from "./TableList";
 import Home from "./Home";
 import Forum from "./Forum";
-import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function App() {
   // sets dark mode on page render
@@ -24,14 +24,14 @@ function App() {
   }, []);
 
   // handles like increment
-  function handleLikesIncrement() {
-    setLikes((likes) => likes + 1);
-  }
+  // function handleLikesIncrement() {
+  //   setLikes((likes) => likes + 1);
+  // }
 
   // handles like decrement
-  function handleLikesDecrement() {
-    setLikes((likes) => likes - 1);
-  }
+  // function handleLikesDecrement() {
+  //   setLikes((likes) => likes - 1);
+  // }
 
   return (
     <div>
@@ -39,7 +39,7 @@ function App() {
         <NavB title="SkiBum®" />
         <Switch>
           <Route path="/forum">
-            <Forum />
+            <Forum resorts={resorts} />
           </Route>
 
           <Route path="/about">
@@ -47,21 +47,16 @@ function App() {
           </Route>
 
           <Route path="/login">
-            <LoginForm />
+            <Login />
           </Route>
 
-          <Route path="/home">
-            <Home />
-          </Route>
-
-          <Route path="/">
+          <Route path="/resorts">
             <Header search={search} setter={setSearch} />
-            <ResortList
-              resorts={resorts}
-              search={search}
-              likesPlus={handleLikesIncrement}
-              likesMinus={handleLikesDecrement}
-            />
+            <ResortList resorts={resorts} search={search} />
+          </Route>
+
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Container>

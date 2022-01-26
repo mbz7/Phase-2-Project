@@ -5,7 +5,7 @@ import { Button, Container, Jumbotron } from "react-bootstrap";
 function Header({ search, setter }) {
   return (
     <header>
-      <>
+      <div>
         <Container fluid className="jumbotron">
           <Container>
             <h1>Fluid jumbotron !</h1>
@@ -17,7 +17,7 @@ function Header({ search, setter }) {
             <Search search={search} setter={setter} />
           </Container>
         </Container>
-      </>
+      </div>
     </header>
   );
 }

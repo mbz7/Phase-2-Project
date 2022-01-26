@@ -1,57 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Table from "./TableList";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+// import { Auth } from "aws-amplify";
 
-function LoginForm() {
+
+function Login() {
+  const [time, setTime] = useState(new Date());
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  // displays current time; kills it when you're not in the component
+  useEffect(() => {
+    const timerID = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
 
-  function handleChange(event) {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  }, []);
+
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
   }
 
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   fetch(``, {
-  //     method: "POST",
-  //     header: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(formData),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data));
-
-    return (
-      <div>
-        <h1>Login</h1>
-        <form>
-          <div>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="username"
-              placeholder="Username..."
-              value={formData.username}
-            />
-          </div>
-          <div>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              placeholder="Password..."
-              value={formData.password}
-            />
-          </div>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-    );
+  function handleSubmit(event) {
+    event.preventDefault();
   }
+  <h5>{time.toString()} </h5>;
+
+  return (
+    <div className="login">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Login
+        </Button>
+      </Form>
+    </div>
+  );
+}
 // }
 
-export default LoginForm;
+export default Login;

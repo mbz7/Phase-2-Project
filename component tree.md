@@ -30,4 +30,5 @@ App.js // set search state here, pass down to Container list, pass down to searc
 *extras*
 -maybe include some posts/readings down below
     -how to avoid altitude sickness, head protection, etc.
-
+-resorts filter?
+    -CO, CA, UT
