@@ -10,7 +10,6 @@ function Forum({ resorts }) {
       <td>{resort.comment}</td>
       <td>{resort.topic}</td>
       <td>{resort.forumImage}</td>
-      <td>{resort.dateTimePosted}</td>
     </tr>
   ));
 
@@ -24,7 +23,7 @@ function Forum({ resorts }) {
 
   return (
     <div className="backcountry-forum">
-      <Container fluid>
+      <Container fluid className="align-items-center">
         <br />
         <Table responsive striped bordered variant="dark">
           <thead>

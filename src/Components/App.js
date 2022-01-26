@@ -14,6 +14,11 @@ function App() {
   // sets dark mode on page render
   const [resorts, setResorts] = useState([]);
   const [search, setSearch] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function handleDarkModeClick() {
+    setIsDarkMode((isDarkMode) => !isDarkMode);
+  }
 
   useEffect(() => {
     fetch("http://localhost:3000/resorts")
@@ -22,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className={"App " + (isDarkMode ? "dark" : "light")}>
       <Container fluid>
         <NavB title="SkiBum®" />
         <Switch>
