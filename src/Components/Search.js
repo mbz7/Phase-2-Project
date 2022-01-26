@@ -2,9 +2,7 @@ import React from "react";
 import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 
 function Search({ search, setter }) {
-  // create a search function - CONSOLE.LOG WORKS
   function renderResortSearch(event) {
-    console.log(event.target.value);
     setter(event.target.value);
   }
 
@@ -20,19 +18,7 @@ function Search({ search, setter }) {
           placeholder="Search For Mountain Resorts Here..."
           onChange={renderResortSearch}
         />
-        <button type="button" class="btn btn-outline-primary">
-          search
-        </button>
       </div>
-      {/* <div>
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          placeholder="Search For Mountain Resorts Here..."
-          onChange={renderResortSearch}
-        ></input>
-      </div> */}
     </Container>
   );
 }
