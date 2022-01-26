@@ -9,7 +9,7 @@ function Forum({ resorts }) {
     <tr>
       <td>{resort.comment}</td>
       <td>{resort.topic}</td>
-      <td src={resort.forumImage} alt={resort.city}></td>
+      <td>{resort.forumImage}</td>
       <td>{resort.dateTimePosted}</td>
     </tr>
   ));
