@@ -1,13 +1,116 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+.home-card-container {
+  height: 400px;
+  background-color: #fafafa;
+  padding: 20px;
+}
+
+.home-card-image {
+  height: 200px;
+  width: 200px;
+}
+
+.jumbotron-text {
+  color: #ffffff
+}
+
+.header-button {
+  width: 300px;
+}
+
+.resort-img {
+  height: 400px;
+}
+
+.resort-img div {
+  margin: 0;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 20px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #c4c4c4;
+  padding: 7px;
+  margin: 10px;
+}
+
+.nav-link:hover {
+  color: #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.nav-link:active {
+  color: #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.nav-container {
+  height: 75px;
+  display: -webkit-flex;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  margin-right: auto;
+}
+
+.home-jumbotron {
+  background-image: url("/public/pexels-daniel-frank-352093.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 35% bottom 13%;
+  position: relative;
+  height: 800px;
+  /* opacity: 25%; */
+  margin: auto 0;
+}
+
+.resort-jumbotron {
+  background-image: url("/public/pexels-photomix-company-937692.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 35% bottom 13%;
+  position: relative;
+  height: 800px;
+  /* opacity: 25%; */
+  margin: auto 0;
+}
+
+/* .resort-jumbotron::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+} */
+
+input-name {
+  width: 600px;
 }

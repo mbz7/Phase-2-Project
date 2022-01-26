@@ -14,8 +14,6 @@ function App() {
   // sets dark mode on page render
   const [resorts, setResorts] = useState([]);
   const [search, setSearch] = useState("");
-  // initial vote count is set at 0
-  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:3000/resorts")
@@ -41,11 +39,11 @@ function App() {
           </Route>
 
           <Route path="/resorts">
-            <Header search={search} setter={setSearch} />
-            <ResortList resorts={resorts} search={search} />
+            {/* <Header search={search} setter={setSearch} /> */}
+            <ResortList resorts={resorts} search={search} setter={setSearch} />
           </Route>
 
-          <Route exact path="/">
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
