@@ -17,34 +17,18 @@ function Home() {
                 We want to help you find the best location to enjoy your skiing
                 or snowboarding!
               </h3>
-              <Button
+              {/* <Button
                 variant="primary"
                 className={"header-button mt-4 btn-primary btn-lg"}
               >
                 Get Started
-              </Button>
+              </Button> */}
             </Col>
           </Row>
         </Container>
       </Container>
 
       <div className="text-center pt-5">
-        {/* <Row>
-            <Col>
-              <Card className="bg-dark text-white col-6 text-center">
-              <Card.Img className={ "home-card-image img img-fluid"} src="https://images.pexels.com/photos/352093/pexels-photo-352093.jpeg?cs=srgb&dl=pexels-daniel-frank-352093.jpg&fm=jpg" alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </Card.Text>
-                  <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
-              </Card>
-            </Col>
-            </Row> */}
         <Container>
           <Row>
             <Col>

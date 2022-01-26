@@ -36,12 +36,12 @@ function ResortList({ resorts, search, setter }) {
             <Col className="col-12 text-light jumbotron-text">
               <h1>Resorts</h1>
               <h3>Search our list below to find the best resort</h3>
-              <Button
+              {/* <Button
                 variant="primary"
                 className={"header-button mt-4 btn-primary btn-lg"}
               >
                 Get Started
-              </Button>
+              </Button> */}
             </Col>
           </Row>
         </Container>
