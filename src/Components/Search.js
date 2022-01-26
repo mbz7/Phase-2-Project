@@ -18,9 +18,6 @@ function Search({ search, setter }) {
           placeholder="Search For Mountain Resorts Here..."
           onChange={renderResortSearch}
         />
-        {/* <button type="button" class="btn btn-outline-primary">
-          search
-        </button> */}
       </div>
     </Container>
   );
