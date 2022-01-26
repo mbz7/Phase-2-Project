@@ -12,7 +12,7 @@ function Home() {
         <Container className="home-jumbotron-img d-flex align-items-center justify-content-center text-center">
           <Row>
             <Col className="col-12 text-light jumbotron-text">
-              <h1>Welcome To SkiBum</h1>
+              <h1>Welcome To SkiBum®</h1>
               <h3>
                 We want to help you find the best location to enjoy your skiing
                 or snowboarding!
