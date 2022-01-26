@@ -5,6 +5,9 @@ import TableList from "./TableList";
 function Forum({ resorts }) {
   const [tableData, setTableData] = useState(resorts);
 
+
+
+  
   const newForumInput = tableData.map((resort) => (
     <tr>
       <td>{resort.comment}</td>
@@ -12,6 +15,9 @@ function Forum({ resorts }) {
       <td>{resort.forumImage}</td>
     </tr>
   ));
+
+
+
 
   const addRows = (data) => {
     const totalComments = resorts.length;
