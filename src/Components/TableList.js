@@ -59,7 +59,7 @@ function TableList(props) {
         type="text"
         value={imageURL}
         onChange={renderImage}
-        placeholder="image"
+        placeholder="image URL"
       ></input>
       <button onClick={submitComment}>Submit</button>
     </div>

@@ -28,7 +28,7 @@ h1 {
 }
 
 .jumbotron-text {
-  color: #ffffff
+  color: #ffffff;
 }
 
 .header-button {
@@ -113,4 +113,16 @@ h1 {
 
 input-name {
   width: 600px;
+}
+
+.App {
+  background: var(--background);
+  color: var(--font-color);
+}
+
+.App.dark {
+  --font-color: rgb(255, 255, 255);
+  --background: rgb(50, 50, 50);
+  --background-light: rgb(101, 101, 101);
+  transition: all 0.3s;
 }

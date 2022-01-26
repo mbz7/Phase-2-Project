@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -27,7 +28,7 @@ function Home() {
         </Container>
       </Container>
 
-      <div className=" text-center pt-5 ">
+      <div className="text-center pt-5">
         {/* <Row>
             <Col>
               <Card className="bg-dark text-white col-6 text-center">
@@ -70,7 +71,9 @@ function Home() {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
+                  <NavLink className={"nav-link"} to="/resorts">
+                    <Button variant="primary">Go to Resorts</Button>
+                  </NavLink>
                 </Card.Body>
               </Card>
             </Col>
@@ -87,7 +90,9 @@ function Home() {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
+                  <NavLink className={"nav-link"} to="/forum">
+                    <Button variant="primary">Go to Forum</Button>
+                  </NavLink>
                 </Card.Body>
               </Card>
             </Col>

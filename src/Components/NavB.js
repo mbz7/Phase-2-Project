@@ -4,8 +4,9 @@ import Home from "./Home";
 import { Button, Container, Row, Col, Navbar } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import Header from "./Header";
 
-function NavB({ title, isDarkMode }) {
+function NavB({ title, isDarkMode, onDarkModeClick }) {
   return (
     <div>
       <Navbar className={""} bg="dark" variant="dark">
@@ -16,9 +17,11 @@ function NavB({ title, isDarkMode }) {
         >
           <Navbar.Brand
             className={"d-flex align-items-center justify-content-between"}
-            href="#home"
+            // href="#home"
           >
-            <h4>⛷ SkiBum® ⛷ </h4>
+            <NavLink className={"nav-link"} to="/">
+              <h4>⛷ SkiBum® ⛷ </h4>
+            </NavLink>
           </Navbar.Brand>
           <Container>
             <Navbar
@@ -38,12 +41,13 @@ function NavB({ title, isDarkMode }) {
               <NavLink className={"nav-link"} to="/about">
                 About Us
               </NavLink>
-              <Button variant="outline-light" onClick={isDarkMode}>
-                {isDarkMode ? "App Light Mode" : "App Dark Mode"}
-              </Button>
-              <hr />
-              <Button to="/login" exact>
-                Login
+              <NavLink className={"nav-link"} to="/login">
+                <Button to="/login" exact>
+                  Login
+                </Button>
+              </NavLink>
+              <Button variant="outline-dark" onClick={onDarkModeClick}>
+                {isDarkMode ? "🌙" : "☀️"}
               </Button>
             </Navbar>
           </Container>
