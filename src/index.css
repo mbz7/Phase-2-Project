@@ -1,22 +1,80 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.search-bar {
+h1 {
+  font-size: 6em;
+}
 
+.header-button {
+  width: 300px;
+}
+
+.resort-img {
+  height: 400px;
+}
+
+.search-bar {
   width: 300px;
   padding: 5px;
   height: 50px;
   text-align: center;
+}
 
+.nav-link {
+  color: #c4c4c4;
+  padding: 7px;
+  margin: 10px;
+}
+
+.nav-link:hover {
+  color: #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.nav-container {
+  height: 75px;
+  display: -webkit-flex;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  margin-right: auto;
+}
+
+.resort-jumbotron {
+  background-image: url("https://images.pexels.com/photos/352093/pexels-photo-352093.jpeg?cs=srgb&dl=pexels-daniel-frank-352093.jpg&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 35% bottom 13%;
+  position: relative;
+  height: 800px;
+  opacity: 0.25rem;
+  margin: auto 0;
+}
+
+.resort-jumbotron::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+input {
+  width: 600px;
 }

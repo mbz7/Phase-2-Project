@@ -1,5 +1,6 @@
 import React from "react";
 import Resort from "./Resort";
+import { Container } from "react-bootstrap";
 
 function ResortList({ resorts, search, likesPlus, likesMinus }) {
   // filters through each object and includes resort NAME as the searchable keyword
@@ -18,7 +19,11 @@ function ResortList({ resorts, search, likesPlus, likesMinus }) {
       likesMinus={likesMinus}
     />
   ));
-  return <div>{resortsObj}</div>;
+  return (
+    <Container>
+      <div>{resortsObj}</div>;
+    </Container>
+  );
 }
 
 export default ResortList;

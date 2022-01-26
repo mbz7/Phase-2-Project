@@ -4,9 +4,9 @@ import { Button, Card, Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 function Resort({ name, website, image, likes }) {
   return (
     <>
-      <Container>
-        <Card className="mt-5" style={{ width: "90%"}}>
-          <Card.Img variant="top" src={image} alt={name} />
+      <Container className={"d-flex align-items-center justify-content-center"}>
+        <Card className="mt-5" style={{ width: "75%"}}>
+          <Card.Img className={ "resort-img ratio ratio-1x1" }variant="top" src={image} alt={name} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>

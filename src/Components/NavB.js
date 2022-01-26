@@ -1,18 +1,32 @@
 import React from "react";
 import { Button, Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 
-function NavB({isDarkMode}) {
+function NavB({ isDarkMode }) {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">SkiBum®</Navbar.Brand>
-        <Navbar className="me-auto">
-          <Nav.Link href="#resorts">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-          <button onClick={isDarkMode}>
-            {isDarkMode ? "App Light" : "App Dark"}
-          </button>
-        </Navbar>
+    <Navbar
+      className={
+        ""
+      }
+      bg="dark"
+      variant="dark"
+    >
+      <Container className={"nav-container d-flex align-items-center justify-content-center justify-content-md-between"}>
+        <Navbar.Brand
+          className={"d-flex align-items-center justify-content-between"}
+          href="#home"
+        >
+          SkiBum®
+        </Navbar.Brand>
+        <Container>
+        <Navbar className="me-auto light gap-1 nav-links nav col-12 col-md-auto mb-2 mr-5 justify-content-end mb-md-0">
+            <Nav.Link href="#resorts">Home</Nav.Link>
+            <Nav.Link href="#resorts">Resorts</Nav.Link>
+          <Nav.Link href="#pricing">Backcountry Forum</Nav.Link>
+          <Button variant="outline-light" onClick={isDarkMode}>
+            {isDarkMode ? "App Light Mode" : "App Dark Mode"}
+          </Button>
+          </Navbar>
+          </Container>
       </Container>
     </Navbar>
   );

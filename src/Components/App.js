@@ -37,10 +37,10 @@ function App() {
   }
 
   return (
-    <Container fluid>
-  
+    <Container fluid className="bg-light">
+
       <NavB />
-      <LoginForm />
+  
       <div className={isDarkMode ? "App Light" : "App Dark"}></div>
       <Header
         isDarkMode={handleToggleLightMode}
