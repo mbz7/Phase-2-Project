@@ -24,21 +24,20 @@ function Resort({
 }) {
   const [weather, setWeather] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=imperial&appid=1bf6a58ea4dd5073cf1ea98128e22991`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((weather) => setWeather(weather));
-  // }, []);
-
   return (
     <div>
-      <Container>
-        <Card className="mt-5" style={{ width: "90%" }}>
-          <Card.Img variant="top" src={image} alt={name} />
+      <Container className={"d-flex align-items-center justify-content-center"}>
+        <Card className="mt-5" style={{ width: "75%" }}>
+          <Card.Img
+            className={"resort-img ratio ratio-1x1"}
+            variant="top"
+            src={image}
+            alt={name}
+          />
           <Card.Body>
-            <Card.Title>{name}</Card.Title>
+            <Card.Title>
+              <h3 className="text-uppercase mt-2">{name}</h3>
+            </Card.Title>
             <hr></hr>
             <b>{city}, CO</b>
             <Card.Text>
