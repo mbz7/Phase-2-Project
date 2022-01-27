@@ -8,7 +8,6 @@ import Login from "./LoginForm";
 import About from "./TableList";
 import Home from "./Home";
 import Forum from "./Forum";
-import Weather from './Weather';
 import { Container } from "react-bootstrap";
 
 function App() {

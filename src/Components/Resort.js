@@ -7,6 +7,7 @@ import {
   Col,
   Navbar,
   Nav,
+  Accordion,
 } from "react-bootstrap";
 import Weather from "./Weather";
 
@@ -18,12 +19,22 @@ function Resort({
   groomed,
   runs,
   lifts,
-  latitude,
-  longitude,
   weathers,
+  resortCity,
 }) {
-
-
+  const [weather, setWeather] = useState(null);
+  const [showWeather, setShowWeather] = useState(false);
+  // useEffect(() => {
+  function getWeather() {
+    if (weather === null) {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${resortCity}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`
+      )
+        .then((response) => response.json())
+        .then((weather) => setWeather(weather));
+    }
+  }
+  // }, []);
   return (
     <div>
       <Container className={"d-flex align-items-center justify-content-center"}>
@@ -57,8 +68,26 @@ function Resort({
               </div>
               <a href={website}>Link to Website</a>
             </Card.Text>
-            <Weather />
           </Card.Body>
+          <Button
+            onClick={() => {
+              setShowWeather(!showWeather);
+              getWeather();
+            }}
+          >
+            Show Weather
+          </Button>
+          {showWeather ? <Weather weather={weather} /> : null}
+          {/* <div onClick={() => getWeather}>
+            <Accordion defaultActiveKey="false">
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>Weather</Accordion.Header>
+                <Accordion.Body>
+                  <Weather weather={weather} />
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div> */}
         </Card>
       </Container>
     </div>

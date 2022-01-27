@@ -11,6 +11,8 @@ function ResortList({ resorts, search, setter }) {
     resort.name.toLowerCase().includes(search.toLowerCase())
   );
 
+
+
   // maps through filtered list of resort names
   const resortsObj = filteredResorts.map((resort) => (
     <Resort
@@ -23,31 +25,33 @@ function ResortList({ resorts, search, setter }) {
       groomed={resort.machineGroomed}
       runs={resort.runsOpen}
       lifts={resort.liftsOpen}
-      latitude={resort.latitude}
-      longitude={resort.longitude}
+      resortCity={resort.resortCity}
     />
   ));
 
-  const resortCities = filteredResorts.map((res) => res.city);
-  resortCities.forEach((city) => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`
-    )
-      .then((r) => r.json())
-      .then((w) => {
-        <Weather
-          weatherObj={weatherObj}
-          setWeatherObj={setWeatherObj}
-          icon={w.weather[0].icon}
-          clouds={w.clouds}
-          temp={w.main.temp}
-          feelTemp={w.main.feels_like}
-          pressure={w.main.pressure}
-          humidity={w.main.humidity}
-          sunset={w.sys.sunset}
-        />;
-      });
-  });
+  // const resortCities = filteredResorts.map((res) => res.city);
+  //   useEffect(() => {
+  // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`)
+  // .then(response => response.json())
+  // .then(console.log)
+  //   })
+  // resortCity.forEach((city) => {
+
+  //     .then((r) => r.json())
+  //     .then((w) => {
+  //       <Weather
+  //         weatherObj={weatherObj}
+  //         setWeatherObj={setWeatherObj}
+  //         icon={w.weather[0].icon}
+  //         clouds={w.clouds}
+  //         temp={w.main.temp}
+  //         feelTemp={w.main.feels_like}
+  //         pressure={w.main.pressure}
+  //         humidity={w.main.humidity}
+  //         sunset={w.sys.sunset}
+  //       />;
+  //     });
+  // });
   return (
     <div id="resort-list">
       <Container
