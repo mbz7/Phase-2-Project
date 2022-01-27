@@ -71,7 +71,7 @@ function Home() {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <NavLink className={"nav-link"} to="/resorts">
+                  <NavLink className="button-link" to="/resorts">
                     <Button variant="primary">Go to Resorts</Button>
                   </NavLink>
                 </Card.Body>
@@ -90,7 +90,7 @@ function Home() {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <NavLink className={"nav-link"} to="/forum">
+                  <NavLink className="button-link" to="/forum">
                     <Button variant="primary">Go to Forum</Button>
                   </NavLink>
                 </Card.Body>

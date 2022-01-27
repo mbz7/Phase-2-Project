@@ -4,20 +4,17 @@ import TableList from "./TableList";
 
 function Forum({ resorts }) {
   const [tableData, setTableData] = useState(resorts);
-  
+
   const newForumInput = tableData.map((resort) => (
     <tr>
       <td>{resort.comment}</td>
       <td>{resort.topic}</td>
-      <td> 
-        <img className='img-thumbnail' src={resort.forumImage}/>
-        </td>
+      <td>
+        <img className="img-thumbnail upload-image" src={resort.forumImage} />
+      </td>
       {/* <td>{resort.dateTimePosted}</td> */}
     </tr>
   ));
-
-
-
 
   const addRows = (data) => {
     const totalComments = resorts.length;
@@ -29,8 +26,9 @@ function Forum({ resorts }) {
 
   return (
     <div className="backcountry-forum">
-      <Container fluid className="align-items-center">
+      <Container className="align-items-center">
         <br />
+        <TableList func={addRows} />
         <Table responsive striped bordered variant="dark">
           <thead>
             <tr>
@@ -42,7 +40,6 @@ function Forum({ resorts }) {
           </thead>
           <tbody>{newForumInput}</tbody>
         </Table>
-        <TableList func={addRows} />
       </Container>
     </div>
   );

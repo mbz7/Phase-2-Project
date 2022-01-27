@@ -4,18 +4,15 @@ import { Button, Container, Row, Col, Grid } from "react-bootstrap";
 import Search from "./Search";
 import Weather from "./Weather";
 
-
 function ResortList({ resorts, search, setter }) {
-
   // filters through each object and includes resort NAME as the searchable keyword
-  const [weatherObj, setWeatherObj] = useState([])
+  const [weatherObj, setWeatherObj] = useState([]);
   const filteredResorts = resorts.filter((resort) =>
     resort.name.toLowerCase().includes(search.toLowerCase())
   );
 
   // maps through filtered list of resort names
   const resortsObj = filteredResorts.map((resort) => (
-  
     <Resort
       key={resort.id}
       // resort={resort}
@@ -28,33 +25,31 @@ function ResortList({ resorts, search, setter }) {
       lifts={resort.liftsOpen}
       latitude={resort.latitude}
       longitude={resort.longitude}
-
     />
-   
   ));
 
-   const resortCities=filteredResorts.map(res=> res.city)
-    resortCities.forEach(city => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`).then(r=>r.json()).then(w=>{
-   
-
-   <Weather 
-
-    weatherObj={weatherObj}
-    setWeatherObj={setWeatherObj}
-    icon={w.weather[0].icon}
-    clouds={w.clouds}
-    temp={w.main.temp}
-    feelTemp={w.main.feels_like}
-    pressure={w.main.pressure}
-    humidity={w.main.humidity}
-    sunset={w.sys.sunset}
-    />
-    })
-     
-  })
+  const resortCities = filteredResorts.map((res) => res.city);
+  resortCities.forEach((city) => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`
+    )
+      .then((r) => r.json())
+      .then((w) => {
+        <Weather
+          weatherObj={weatherObj}
+          setWeatherObj={setWeatherObj}
+          icon={w.weather[0].icon}
+          clouds={w.clouds}
+          temp={w.main.temp}
+          feelTemp={w.main.feels_like}
+          pressure={w.main.pressure}
+          humidity={w.main.humidity}
+          sunset={w.sys.sunset}
+        />;
+      });
+  });
   return (
-    <div>
+    <div id="resort-list">
       <Container
         fluid
         className="jumbotron resort-jumbotron d-flex align-items-center justify-content-center"

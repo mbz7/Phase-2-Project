@@ -12,6 +12,7 @@ import reportWebVitals from "./reportWebVitals";
 // BrowserRouter - use this one in your applications!
 // HashRouter - good for Scrimba
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Browser>
