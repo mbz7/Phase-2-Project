@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import Home from "./Home";
 import { Button, Container, Row, Col, Navbar } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Header from "./Header";
 
 function NavB({ title, isDarkMode, onDarkModeClick }) {
@@ -19,9 +19,9 @@ function NavB({ title, isDarkMode, onDarkModeClick }) {
             className={"d-flex align-items-center justify-content-between"}
             // href="#home"
           >
-            <NavLink className={"nav-link"} to="/">
+            <Link activeClassName="logo-active" className={"logo"} to="/">
               <h4>⛷ SkiBum® ⛷ </h4>
-            </NavLink>
+            </Link>
           </Navbar.Brand>
           <Container>
             <Navbar
@@ -29,19 +29,19 @@ function NavB({ title, isDarkMode, onDarkModeClick }) {
                 "me-auto light gap-2 nav-links nav col-12 col-md-auto mb-2 mr-5 justify-content-end mb-md-0"
               }
             >
-              <NavLink className={"nav-link"} to="/home">
+              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/home">
                 Home
               </NavLink>
-              <NavLink className={"nav-link"} to="/resorts">
+              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/resorts">
                 Resorts
               </NavLink>
-              <NavLink className={"nav-link"} to="/forum">
+              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/forum">
                 Backcountry Forum
               </NavLink>
-              <NavLink className={"nav-link"} to="/about">
+              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/about">
                 About Us
               </NavLink>
-              <NavLink className={"nav-link"} to="/login">
+              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/login">
                 <Button to="/login" exact>
                   Login
                 </Button>

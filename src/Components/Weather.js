@@ -12,7 +12,7 @@ function Weather({ weathers,
  }) {
       console.log({weathers})
 
-    //      icon={w.weather[0].icon}
+    // icon={w.weather[0].icon}
     // clouds={w.clouds}
     // temp={w.main.temp}
     // feelTemp={w.main.feels_like}

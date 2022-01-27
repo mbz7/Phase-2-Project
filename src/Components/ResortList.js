@@ -7,9 +7,6 @@ import Weather from "./Weather";
 
 function ResortList({ resorts, search, setter }) {
 
-
-
-  
   // filters through each object and includes resort NAME as the searchable keyword
   const [weatherObj, setWeatherObj] = useState([])
   const filteredResorts = resorts.filter((resort) =>
