@@ -62,14 +62,13 @@ function Home() {
               <Card border="primary" style={{ width: "25rem" }}>
                 <Card.Img
                   variant="top"
-                  src="https://images.pexels.com/photos/352093/pexels-photo-352093.jpeg?cs=srgb&dl=pexels-daniel-frank-352093.jpg&fm=jpg"
+                  src="/skibum_home_resort-link_thumbnail.png"
                   alt="Card image"
                 />
                 <Card.Body>
-                  <Card.Title>Resorts</Card.Title>
+                  <Card.Title><h3>Ski Resorts</h3></Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    View a detailed list of ski resorts that includes snow conditions, amount of runs, and the number of lifts on the mountain.
                   </Card.Text>
                   <NavLink className="button-link" to="/resorts">
                     <Button variant="primary">Go to Resorts</Button>
@@ -81,14 +80,13 @@ function Home() {
               <Card border="warning" style={{ width: "25rem" }}>
                 <Card.Img
                   variant="top"
-                  src="https://images.pexels.com/photos/352093/pexels-photo-352093.jpeg?cs=srgb&dl=pexels-daniel-frank-352093.jpg&fm=jpg"
+                  src="/skibum_home_backcountry-link_thumbnail.png"
                   alt="Card image"
                 />
                 <Card.Body>
-                  <Card.Title>Backcountry Forum</Card.Title>
+                  <Card.Title><h3>Backcountry Forum</h3></Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    A forum dedicated to those who enjoy going off the trail and into the woods in remote and sometimes hidden locations.
                   </Card.Text>
                   <NavLink className="button-link" to="/forum">
                     <Button variant="primary">Go to Forum</Button>
