@@ -8,6 +8,7 @@ import Login from "./LoginForm";
 import About from "./TableList";
 import Home from "./Home";
 import Forum from "./Forum";
+import Weather from './Weather';
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   const [resorts, setResorts] = useState([]);
   const [search, setSearch] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  
   function handleDarkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
@@ -25,6 +26,8 @@ function App() {
       .then((response) => response.json())
       .then((resorts) => setResorts(resorts));
   }, []);
+
+ 
 
   return (
     <div className={"App " + (isDarkMode ? "dark" : "light")}>

@@ -2,13 +2,21 @@ import React, { useState, useEffect } from "react";
 import Resort from "./Resort";
 import { Button, Container, Row, Col, Grid } from "react-bootstrap";
 import Search from "./Search";
-
+import Weather
+ from "./Weather";
 function ResortList({ resorts, search, setter }) {
   // filters through each object and includes resort NAME as the searchable keyword
+  const [weatherObj, setWeatherObj] = useState([])
   const filteredResorts = resorts.filter((resort) =>
     resort.name.toLowerCase().includes(search.toLowerCase())
   );
-
+   
+    useEffect(()=> { fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`)
+   .then(r=>r.json()).then(weather=> setWeatherObj({weather}))
+      }, [])
+      console.log(weatherObj)
+     { weatherObj.map(w=>
+    <Weather weather= {w} weatherObj={weatherObj} setWeatherObj={setWeatherObj}/>)}
   // maps through filtered list of resort names
   const resortsObj = filteredResorts.map((resort) => (
     <Resort
