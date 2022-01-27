@@ -4,9 +4,6 @@ import TableList from "./TableList";
 
 function Forum({ resorts }) {
   const [tableData, setTableData] = useState(resorts);
-
-
-
   
   const newForumInput = tableData.map((resort) => (
     <tr>
