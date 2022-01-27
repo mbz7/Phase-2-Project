@@ -12,7 +12,9 @@ function Forum({ resorts }) {
     <tr>
       <td>{resort.comment}</td>
       <td>{resort.topic}</td>
-      <td src={resort.forumImage}>{resort.forumImage}</td>
+      <td> 
+        <img className='img-thumbnail' src={resort.forumImage}/>
+        </td>
       {/* <td>{resort.dateTimePosted}</td> */}
     </tr>
   ));
