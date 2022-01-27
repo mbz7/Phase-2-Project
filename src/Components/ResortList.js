@@ -3,8 +3,9 @@ import Resort from "./Resort";
 import { Button, Container, Row, Col, Grid } from "react-bootstrap";
 import Search from "./Search";
 import Weather from "./Weather";
-function ResortList({ resorts, search, setter }) {
 
+
+function ResortList({ resorts, search, setter }) {
 
 
 
@@ -38,11 +39,13 @@ function ResortList({ resorts, search, setter }) {
    const resortCities=filteredResorts.map(res=> res.city)
     resortCities.forEach(city => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=aac56d8ba335e529dfa836fcfbfb5d1d`).then(r=>r.json()).then(w=>{
+   
+
    <Weather 
-    weathers={w}
+
     weatherObj={weatherObj}
     setWeatherObj={setWeatherObj}
-    icon={w.weather.icon}
+    icon={w.weather[0].icon}
     clouds={w.clouds}
     temp={w.main.temp}
     feelTemp={w.main.feels_like}
@@ -50,8 +53,8 @@ function ResortList({ resorts, search, setter }) {
     humidity={w.main.humidity}
     sunset={w.sys.sunset}
     />
-    
     })
+     
   })
   return (
     <div>
