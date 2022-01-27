@@ -22,7 +22,7 @@ function Resort({
   longitude,
   weathers,
 }) {
-  const [weather, setWeather] = useState([]);
+
 
   return (
     <div>
@@ -57,7 +57,7 @@ function Resort({
               </div>
               <a href={website}>Link to Website</a>
             </Card.Text>
-            <Weather weathers={weather} />
+            <Weather />
           </Card.Body>
         </Card>
       </Container>
