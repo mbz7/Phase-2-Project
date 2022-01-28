@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Card, Container, Image } from "react-bootstrap";
 import ResortList from "./ResortList";
+
 function Weather({ weather }) {
   console.log(weather);
 
@@ -13,12 +14,14 @@ function Weather({ weather }) {
     return <h2>...Loading</h2>;
   }
 
+  
   return (
     <Container className={"d-flex align-items-center justify-content-center"}>
       <Card className="mt-5" style={{ width: "75%" }}>
         <Card.Body>
           <Card.Title>
-            {/* <h3 className="text-uppercase mt-2">{weather.clouds.all}</h3> */}
+            {/* <h3 className="tenpm run server
+            xt-uppercase mt-2">{weather.clouds.all}</h3> */}
           </Card.Title>
           <Card.Text>
             <div>
@@ -29,6 +32,9 @@ function Weather({ weather }) {
                 <p>
                   <b>Feels Like:</b> {weather.main.feels_like} ℉
                 </p>
+              </div>
+              <div>
+                <Image src={`/public/weather-icons/${weather.weather[0].icon}.png`}/>
               </div>
               <p>
                 {weather.weather[0].description.toUpperCase()}<br/>
