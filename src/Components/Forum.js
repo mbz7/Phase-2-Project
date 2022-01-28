@@ -41,7 +41,7 @@ function Forum({ resorts }) {
     <div>
       <Container>
         <div className="pt-5 mt-5 pb-5 mb-5 w-50 mx-auto">
-          <Form>
+          {/* <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
@@ -60,7 +60,7 @@ function Forum({ resorts }) {
             <Button variant="primary" type="submit" >
               Submit
             </Button>
-          </Form>
+          </Form> */}
         </div>
           <Form className='forum' onSubmit={handleForumPost}>
             <Form.Control type="input" name="comment" onChange={e => setComment(e.target.value)} placeholder="comment" />

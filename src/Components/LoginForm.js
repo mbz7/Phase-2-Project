@@ -34,13 +34,18 @@ function Login() {
   return (
     <>
       <h5>{time.toString()} </h5>
-      <div className="login">
-        <Form onSubmit={handleSubmit}>
+      <div className="pt-5 mt-5 pb-5 mb-5 w-50 mx-auto">
+        <Form
+          className="mb-3"
+          controlId="formBasicEmail"
+          onSubmit={handleSubmit}
+        >
           <Form.Group size="lg" controlId="email">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Email address</Form.Label>
             <Form.Control
               autoFocus
               type="email"
+              placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -50,11 +55,15 @@ function Login() {
             <Form.Control
               type="password"
               value={password}
+              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button block size="lg" type="submit" disabled={!validateForm}>
-            Login
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Remember Me" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
           </Button>
         </Form>
       </div>
