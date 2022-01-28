@@ -56,9 +56,8 @@ function ResortList({ resorts, search, setter }) {
     <div id="resort-list">
       <Container
         fluid
-        className="jumbotron resort-jumbotron d-flex align-items-center justify-content-center"
+        className="jumbotron resort-jumbotron d-flex align-items-center justify-content-center text-center"
       >
-        <Container className="resort-jumbotron-img d-flex align-items-center justify-content-center text-center">
           <Row>
             <Col className="col-12 text-light jumbotron-text">
               <h1>Resorts</h1>
@@ -71,7 +70,6 @@ function ResortList({ resorts, search, setter }) {
               </Button>
             </Col>
           </Row>
-        </Container>
       </Container>
       <div className="search-bar align-items-center mt-5">
         <Row>
@@ -82,7 +80,7 @@ function ResortList({ resorts, search, setter }) {
         </Row>
 
         <Row>
-          <Col className={"align-items-center"}>
+          <Col className="align-items-center">
             <Search search={search} setter={setter} />
           </Col>
         </Row>

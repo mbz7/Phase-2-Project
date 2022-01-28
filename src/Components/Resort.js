@@ -38,7 +38,10 @@ function Resort({
   return (
     <div>
       <Container className={"d-flex align-items-center justify-content-center"}>
-        <Card className="mt-5" style={{ width: "75%" }}>
+        <Card
+          className="mt-5 shadow-lg p-3 mb-5 bg-body rounded"
+          style={{ width: "75%" }}
+        >
           <Card.Img
             className={"resort-img ratio ratio-1x1"}
             variant="top"
@@ -46,36 +49,41 @@ function Resort({
             alt={name}
           />
           <Card.Body>
-            <Card.Title>
-              <h3 className="text-uppercase mt-2">{name}</h3>
-            </Card.Title>
-            <hr></hr>
-            <b>{city}, CO</b>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-              <div>
-                <b>Machine Groomed: </b>
-                {groomed}"
-              </div>
-              <div>
-                <b>Runs Open: </b>
-                {runs}
-              </div>
-              <div>
-                <b>Lifts Open: </b>
-                {lifts}
-              </div>
-              <a href={website}>Link to Website</a>
-            </Card.Text>
+            <Row>
+              <Card.Title>
+                <h3 className="text-uppercase mt-2">{name}</h3>
+              </Card.Title>
+              <hr></hr>
+              <Card.Text>
+                <div className="col-4">
+                  <b>{city}, CO</b>
+                  <div>
+                    <b>Machine Groomed: </b>
+                    {groomed}"
+                  </div>
+                  <div>
+                    <b>Runs Open: </b>
+                    {runs}
+                  </div>
+                </div>
+                <div className="col-4">
+                  <div>
+                    <b>Lifts Open: </b>
+                    {lifts}
+                  </div>
+                  <a href={website}>Link to Website</a>
+                </div>
+              </Card.Text>
+            </Row>
           </Card.Body>
           <Button
+            className="btn btn-info"
             onClick={() => {
               setShowWeather(!showWeather);
               getWeather();
             }}
           >
-            Show Weather
+            🌨 Click To Show Weather 🌨
           </Button>
           {showWeather ? <Weather weather={weather} /> : null}
           {/* <div onClick={() => getWeather}>

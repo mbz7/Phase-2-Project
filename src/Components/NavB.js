@@ -19,8 +19,17 @@ function NavB({ title, isDarkMode, onDarkModeClick }) {
             className={"d-flex align-items-center justify-content-between"}
             // href="#home"
           >
-            <Link activeClassName="logo-active" className={"logo"} to="/">
+            {/* <Link activeClassName="logo-active" className={"logo"} to="/">
               <h4>⛷ SkiBum® ⛷ </h4>
+            </Link> */}
+            <Link activeClassName="logo-active" className={"logo fluid"} to="/">
+              <img
+                src="/skier 2_logo.png"
+                width="auto"
+                height="60px"
+                className="d-inline-block align-top"
+                alt="SkiBum logo"
+              />
             </Link>
           </Navbar.Brand>
           <Container>
@@ -29,20 +38,40 @@ function NavB({ title, isDarkMode, onDarkModeClick }) {
                 "me-auto light gap-2 nav-links nav col-12 col-md-auto mb-2 mr-5 justify-content-end mb-md-0"
               }
             >
-              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/home">
+              <NavLink
+                activeClassName="nav-link-active"
+                className={"nav-link"}
+                to="/home"
+              >
                 Home
               </NavLink>
-              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/resorts">
+              <NavLink
+                activeClassName="nav-link-active"
+                className={"nav-link"}
+                to="/resorts"
+              >
                 Resorts
               </NavLink>
-              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/forum">
+              <NavLink
+                activeClassName="nav-link-active"
+                className={"nav-link"}
+                to="/forum"
+              >
                 Backcountry Forum
               </NavLink>
-              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/about">
+              {/* <NavLink
+                activeClassName="nav-link-active"
+                className={"nav-link"}
+                to="/about"
+              >
                 About Us
-              </NavLink>
-              <NavLink activeClassName="nav-link-active" className={"nav-link"} to="/login">
-                <Button to="/login" exact>
+              </NavLink> */}
+              <NavLink
+                activeClassName="nav-link-active"
+                className={"nav-link"}
+                to="/login"
+              >
+                <Button className="nav-link btn" to="/login" exact>
                   Login
                 </Button>
               </NavLink>

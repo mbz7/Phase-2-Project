@@ -9,6 +9,7 @@ import About from "./TableList";
 import Home from "./Home";
 import Forum from "./Forum";
 import { Container } from "react-bootstrap";
+import Footer from "./Footer";
 
 function App() {
   // sets dark mode on page render
@@ -41,9 +42,9 @@ function App() {
             <Forum resorts={resorts} />
           </Route>
 
-          <Route path="/about">
+          {/* <Route path="/about">
             <About />
-          </Route>
+          </Route> */}
 
           <Route path="/login">
             <Login />
@@ -57,6 +58,9 @@ function App() {
             <Home />
           </Route>
         </Switch>
+
+        <Footer />
+
       </Container>
     </div>
   );
