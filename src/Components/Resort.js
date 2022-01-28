@@ -19,7 +19,7 @@ function Resort({
   groomed,
   runs,
   lifts,
-  weathers,
+ 
   resortCity,
 }) {
   const [weather, setWeather] = useState(null);

@@ -4,40 +4,38 @@ import { Button, Container, Form, Table, Row, Col } from "react-bootstrap";
 
 function Forum({ resorts }) {
 
-  const [tableData, setTableData] = useState(resorts);
   const [forumPosts, setForumPosts] = useState([])
-  const newForumPost = tableData.map((resort) => (
-    <tr>
-      <td>{resort.comment}</td>
-      <td>{resort.topic}</td>
-      <td>
-        <img className="img-thumbnail upload-image" src={resort.forumImage} />
-      </td>
-      {/* <td>{resort.dateTimePosted}</td> */}
-    </tr>
-  ));
+  const [comment, setComment] = useState('')
+  const [topic, setTopic] = useState('')
+  const [image, setImage] = useState('')
 
-  const addRows = (data) => {
-    const totalComments = resorts.length;
-    data.id = resorts + 1;
-    const updatedTotalComments = [...tableData];
-    updatedTotalComments.push(data);
-    setTableData(updatedTotalComments);
-  };
-    function handleForumPost() {
-    setForumPosts([...forumPosts, newForumPost]);
-    fetch(`http://localhost:3000/forum-posts`, {
-      method: 'POST', // or 'PUT'
-      headers: {
-       'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(setForumPosts),
-        })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Success:', data);
-        })
-      }
+  useEffect(()=> {
+    fetch("http://localhost:3000/forum-posts") 
+    .then(r=>r.json())
+    .then(tableData => setForumPosts(tableData))
+    }, [forumPosts])
+      const allForumPosts= forumPosts.map(post => (
+          <tr>
+          <td>{post.comment}</td>
+          <td>{post.topic}</td>
+          <td>
+          <img className="img-thumbnail upload-image" src={post.image} />
+          </td>
+          </tr>
+       ))
+    
+   const handleForumPost = (e) => {
+      e.preventDefault()
+      const newForumPost={comment, topic, image}
+      
+       fetch("http://localhost:3000/forum-posts", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newForumPost)
+    })
+    setForumPosts([...forumPosts, newForumPost])
+  }
+      
   return (
     <div>
       <Container>
@@ -58,25 +56,33 @@ function Forum({ resorts }) {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="primary" type="submit" onSubmit={handleForumPost}>
+            <Button variant="primary" type="submit" >
               Submit
             </Button>
           </Form>
         </div>
+          <Form className='forum' onSubmit={handleForumPost}>
+            <Form.Control type="input" name="comment" onChange={e => setComment(e.target.value)} placeholder="comment" />
+             <Form.Control type="input" name="topic" onChange={e => setTopic(e.target.value)} placeholder="topic" />
+              <Form.Control type="input"name="image" onChange={e => setImage(e.target.value)} placeholder="image" />
+               <Button variant="primary" type="submit" >
+              Submit
+            </Button>
+          </Form>
 
         <div className="backcountry-forum">
           <br />
-          {<TableList func={addRows} />}
+          {/* {<TableList func={addRows} />} */}
           <Table responsive striped bordered variant="dark">
             <thead>
               <tr>
-                <th>New Comment</th>
+                <th>Comment</th>
                 <th>Topic</th>
-                <th>Post An Image!</th>
+                <th>Images</th>
                 {/* <th>Date/Time Posted</th> */}
               </tr>
             </thead>
-            <tbody>{newForumPost}</tbody>
+            <tbody>{allForumPosts}</tbody>
           </Table>
         </div>
       </Container>
