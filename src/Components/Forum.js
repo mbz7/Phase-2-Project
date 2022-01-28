@@ -13,7 +13,7 @@ function Forum({ resorts }) {
     fetch("http://localhost:3000/forum-posts") 
     .then(r=>r.json())
     .then(tableData => setForumPosts(tableData))
-    }, [forumPosts])
+    }, [setForumPosts])
       const allForumPosts= forumPosts.map(post => (
           <tr>
           <td>{post.comment}</td>

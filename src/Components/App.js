@@ -10,7 +10,9 @@ import Home from "./Home";
 import Forum from "./Forum";
 import { Container } from "react-bootstrap";
 import Footer from "./Footer";
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
+injectTapEventPlugin();
 function App() {
   // sets dark mode on page render
   const [resorts, setResorts] = useState([]);
