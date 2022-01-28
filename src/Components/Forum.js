@@ -3,9 +3,10 @@ import TableList from "./TableList";
 import { Button, Container, Form, Table, Row, Col } from "react-bootstrap";
 
 function Forum({ resorts }) {
-  const [tableData, setTableData] = useState(resorts);
 
-  const newForumInput = tableData.map((resort) => (
+  const [tableData, setTableData] = useState(resorts);
+  const [forumPosts, setForumPosts] = useState([])
+  const newForumPost = tableData.map((resort) => (
     <tr>
       <td>{resort.comment}</td>
       <td>{resort.topic}</td>
@@ -23,7 +24,20 @@ function Forum({ resorts }) {
     updatedTotalComments.push(data);
     setTableData(updatedTotalComments);
   };
-
+    function handleForumPost() {
+    setForumPosts([...forumPosts, newForumPost]);
+    fetch(`http://localhost:3000/forum-posts`, {
+      method: 'POST', // or 'PUT'
+      headers: {
+       'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(setForumPosts),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+      }
   return (
     <div>
       <Container>
@@ -44,7 +58,7 @@ function Forum({ resorts }) {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onSubmit={handleForumPost}>
               Submit
             </Button>
           </Form>
@@ -52,7 +66,7 @@ function Forum({ resorts }) {
 
         <div className="backcountry-forum">
           <br />
-          {/* <TableList func={addRows} /> */}
+          {<TableList func={addRows} />}
           <Table responsive striped bordered variant="dark">
             <thead>
               <tr>
@@ -62,7 +76,7 @@ function Forum({ resorts }) {
                 {/* <th>Date/Time Posted</th> */}
               </tr>
             </thead>
-            <tbody>{newForumInput}</tbody>
+            <tbody>{newForumPost}</tbody>
           </Table>
         </div>
       </Container>
@@ -70,4 +84,4 @@ function Forum({ resorts }) {
   );
 }
 
-export default Forum;
+export default Forum

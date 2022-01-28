@@ -31,7 +31,7 @@ function TableList(props) {
     props.func(addComment);
     clearState();
   }
-
+  
   // clears input fields
   function clearState() {
     setComment("");
