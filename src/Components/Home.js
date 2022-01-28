@@ -115,13 +115,13 @@ function Home() {
 
       <div className="d-flex align-items-center justify-content-center jumbotron mx-auto bg-info text-dark text-center pt-5 pb-5 mt-5" style={{ height: "20rem" }}>
         <div>
-        <h4>Are you not entertained?</h4>
+        <h4>Learn more about our us or our partners?</h4>
         <br></br>
         <Button className="btn btn-dark text-light">Contact Us</Button>
         </div>
         </div>
 
-      <div className="jumbotron bg-white text-dark text-center pt-5 pb-5 mb-5 mt-5">
+      <div className="jumbotron bg-white text-dark text-center pt-5 pb-5 mb-5">
         <h3 className="mb-3 pb-3">OUR PARTNERS</h3>
         <hr className="w-25 mx-auto" />
         <br />
