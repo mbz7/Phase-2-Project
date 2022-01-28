@@ -34,6 +34,7 @@ function Forum({ resorts }) {
       body: JSON.stringify(newForumPost)
     })
     setForumPosts([...forumPosts, newForumPost])
+    e.target.reset()
   }
       
   return (
