@@ -77,7 +77,7 @@ function Resort({
             </Row>
           </Card.Body>
           <Button
-            className="btn btn-info"
+            className="text-light weather-button "
             onClick={() => {
               setShowWeather(!showWeather);
               getWeather();

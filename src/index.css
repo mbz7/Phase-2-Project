@@ -147,3 +147,8 @@ input-name {
   height: 150px;
   width: auto;
 }
+
+.weather-button {
+  background-color: #1c1c1f;
+  height: 2.5em;
+}
