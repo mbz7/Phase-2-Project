@@ -3,9 +3,6 @@ import { Button, Card, Container, Image } from "react-bootstrap";
 import ResortList from "./ResortList";
 
 function Weather({ weather }) {
-  console.log(weather);
-
-  // icon={weather.weather[0].icon}
   // clouds={weather.clouds}
   // temperature={weather.main.temp}
   // feelsLike={w.main.feels_like}
@@ -34,7 +31,7 @@ function Weather({ weather }) {
                 </p>
               </div>
               <div>
-                <Image src={`/public/weather-icons/${weather.weather[0].icon}.png`}/>
+                <img src={`../weather-icons/${weather.weather[0].icon}.png`}></img>
               </div>
               <p>
                 {weather.weather[0].description.toUpperCase()}<br/>

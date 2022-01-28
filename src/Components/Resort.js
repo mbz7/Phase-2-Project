@@ -60,16 +60,19 @@ function Resort({
                   <div>
                     <b>Machine Groomed: </b>
                     {groomed}"
+                    <img src={`../resort-icons/machine-groomed.png`}></img>
                   </div>
                   <div>
                     <b>Runs Open: </b>
                     {runs}
+                    <img src={`../resort-icons/runs.png`}></img>
                   </div>
                 </div>
                 <div className="col-4">
                   <div>
                     <b>Lifts Open: </b>
                     {lifts}
+                    <img src={`../resort-icons/lifts.png`}></img>
                   </div>
                   <a href={website}>Link to Website</a>
                 </div>
