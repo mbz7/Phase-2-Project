@@ -64,14 +64,15 @@ function ResortList({ resorts, search, setter }) {
               <h3>Search our list below to find the best resort</h3>
               <Button
                 variant="primary"
-                className={"header-button mt-4 btn-primary btn-lg"}
+              className={"header-button mt-4 btn-primary btn-lg"}
+              href="#start-search"
               >
                 Get Started
               </Button>
             </Col>
           </Row>
       </Container>
-      <div className="search-bar align-items-center mt-5">
+      <div className="search-bar align-items-center mt-5" id="start-search">
         <Row>
           <Col>
             <h2>Search For Your Local Mountain Here</h2>
