@@ -146,7 +146,7 @@ input-name {
 }
 
 .App.dark {
-  --font-color: rgb(255, 255, 255);
+  font-color: rgb(255, 255, 255);
   --background: rgb(50, 50, 50);
   --background-light: rgb(101, 101, 101);
   transition: all 0.3s;
