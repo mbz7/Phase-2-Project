@@ -48,35 +48,41 @@ function Resort({
             src={image}
             alt={name}
           />
-          <Card.Body>
-            <Row>
+          
+          
               <Card.Title>
                 <h3 className="text-uppercase mt-2">{name}</h3>
+                <b >{city}, CO</b><br></br>
+                <a href={website}>Link to Website</a>
               </Card.Title>
               <hr></hr>
-              <Card.Text>
-                <div className="col-4">
-                  <b>{city}, CO</b>
-                  <div>
+              <Card.Body>
+                <Row>
+              
+                <div class="justify-content-evenly">
+                  
+                  <div class="d-inline-block">
                     <b>Machine Groomed: </b>
                     {groomed}"
                     <img src={`../resort-icons/machine-groomed.png`}></img>
                   </div>
-                  <div>
-                    <b>Runs Open: </b>
+                  <div class="d-inline-block">
+                    <b class='d-flex-around'>Runs Open: </b>
                     {runs}
                     <img src={`../resort-icons/runs.png`}></img>
                   </div>
-                </div>
-                <div className="col-4">
-                  <div>
+                
+                <div class="d-inline-block">
+                  
                     <b>Lifts Open: </b>
                     {lifts}
                     <img src={`../resort-icons/lifts.png`}></img>
-                  </div>
-                  <a href={website}>Link to Website</a>
                 </div>
-              </Card.Text>
+                </div>
+                  
+                
+                
+              
             </Row>
           </Card.Body>
           <Button

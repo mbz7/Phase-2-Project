@@ -13,31 +13,34 @@ function Weather({ weather }) {
 
   
   return (
-    <Container className={"d-flex align-items-center justify-content-center"}>
+    <Container >
       <Card className="mt-5" style={{ width: "75%" }}>
-        <Card.Body>
+        <Card.Body className={'justify-content-center'}>
           <Card.Title>
             {/* <h3 className="tenpm run server
             xt-uppercase mt-2">{weather.clouds.all}</h3> */}
           </Card.Title>
           <Card.Text>
-            <div>
-              <div>
-                <p>
+           
+              <div className= 'd-flex justify-content-evenly'>
+                <p >
                   <b>Current Temp:</b> {weather.main.temp} ℉
                 </p>
                 <p>
                   <b>Feels Like:</b> {weather.main.feels_like} ℉
                 </p>
               </div>
-              <div>
+              <div className="d-flex justify-content-center max-height max-width">
                 <img src={`../weather-icons/${weather.weather[0].icon}.png`}></img>
               </div>
-              <p>
+              <p className="d-flex justify-content-center ">
                 {weather.weather[0].description.toUpperCase()}<br/>
-                <b>Cloud Cover:</b> {weather.clouds.all}%
-              </p>
-            </div>
+                 </p>
+                <p className="d-flex justify-content-center">
+                Cloud Cover:{weather.clouds.all}%
+                </p>
+             
+           
           </Card.Text>
         </Card.Body>
       </Card>
